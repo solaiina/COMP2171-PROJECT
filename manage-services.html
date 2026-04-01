@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Services</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f4f4f4;
+            padding: 40px 20px;
+        }
+
+        .page-box {
+            max-width: 850px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        .page-box h1, .page-box h2 {
+            color: #162938;
+            margin-bottom: 20px;
+        }
+
+        .services-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr auto;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        .services-form input,
+        .services-form button {
+            padding: 12px;
+            font-size: 15px;
+            border-radius: 8px;
+        }
+
+        .services-form input {
+            border: 1px solid #ccc;
+        }
+
+        .services-form button {
+            border: none;
+            background: #162938;
+            color: white;
+            cursor: pointer;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th, td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
+        }
+
+        th {
+            background: #162938;
+            color: white;
+        }
+
+        .action-btn {
+            background: #162938;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .delete-btn {
+            background: #b00020;
+        }
+
+        .top-actions {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .top-actions a {
+            text-decoration: none;
+            background: #162938;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .services-form {
+                grid-template-columns: 1fr;
+            }
+
+            table, thead, tbody, th, td, tr {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-box">
+        <div class="top-actions">
+            <a href="provider-dashboard.html">← Back to Dashboard</a>
+            <a href="view-appointments.html">View Appointments</a>
+        </div>
+
+        <h1>Manage Services</h1>
+
+        <div class="services-form">
+            <input type="text" id="serviceName" placeholder="Service Name">
+            <input type="number" id="serviceDuration" placeholder="Duration (minutes)">
+            <input type="number" id="servicePrice" placeholder="Price">
+            <button onclick="addService()">Add Service</button>
+        </div>
+
+        <h2>Current Services</h2>
+        <table id="servicesTable">
+            <thead>
+                <tr>
+                    <th>Service Name</th>
+                    <th>Duration</th>
+                    <th>Price</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script src="../js/manage-services.js"></script>
+</body>
+</html>
